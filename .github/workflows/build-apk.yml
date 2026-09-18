@@ -26,15 +26,16 @@ jobs:
           java-version: '21'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
-          accept-android-sdk-licenses: true
+          packages: ''
+          accept-android-sdk-licenses: false
           log-accepted-android-sdk-licenses: false
 
-      - name: Install Android SDK packages
+      - name: Accept Android SDK licenses and install packages
         run: |
-          yes | sdkmanager --licenses
-          sdkmanager "platform-tools"
+          yes | sdkmanager --licenses >/dev/null
+          sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
 
       - name: Install Node dependencies
         run: npm install
