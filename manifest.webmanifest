@@ -1,0 +1,8 @@
+{
+  "name": "StudyTracker.io",
+  "short_name": "StudyTracker.io",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#100914",
+  "theme_color": "#160d1d"
+}
