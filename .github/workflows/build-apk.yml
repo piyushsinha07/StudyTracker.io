@@ -40,6 +40,15 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Prepare web folder
+        run: |
+          mkdir -p web
+          cp index.html web/
+          cp app.js web/
+          cp styles.css web/
+          cp manifest.webmanifest web/
+          cp sw.js web/
+
       - name: Create Android project
         run: npx cap add android
 
